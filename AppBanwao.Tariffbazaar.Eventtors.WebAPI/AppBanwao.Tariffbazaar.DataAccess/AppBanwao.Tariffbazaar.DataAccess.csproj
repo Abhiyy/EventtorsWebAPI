@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5449A60F-29CC-413D-ABD4-465696F0F241}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppBanwao.Tariffbazaar.DataAccess</RootNamespace>
+    <AssemblyName>AppBanwao.Tariffbazaar.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="FoodType.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OtpHolder.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Place.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceAddress.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceContactDetail.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceEvent.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceFoodMenu.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceImage.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceOwnerDetail.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlacePriceDetail.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlacesProp.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceType.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentBasi.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Slider.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TariffBazaar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TariffBazaar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TariffBazaar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TariffBazaar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TariffBazaar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserName.cs">
+      <DependentUpon>TariffBazaar.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="TariffBazaar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TariffBazaar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="TariffBazaar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TariffBazaar.edmx</DependentUpon>
+      <LastGenOutput>TariffBazaar.Context.cs</LastGenOutput>
+    </None>
+    <None Include="TariffBazaar.edmx.diagram">
+      <DependentUpon>TariffBazaar.edmx</DependentUpon>
+    </None>
+    <None Include="TariffBazaar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TariffBazaar.edmx</DependentUpon>
+      <LastGenOutput>TariffBazaar.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

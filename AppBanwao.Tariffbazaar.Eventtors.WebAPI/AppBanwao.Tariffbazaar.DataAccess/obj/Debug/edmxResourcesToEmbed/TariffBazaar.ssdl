@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TariffBazaarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="FoodTypes">
+    <Key>
+      <PropertyRef Name="FoodTypeID" />
+    </Key>
+    <Property Name="FoodTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="RentItemId" />
+    </Key>
+    <Property Name="RentItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="40" />
+    <Property Name="Description" Type="varchar" MaxLength="1000" />
+    <Property Name="Features" Type="varchar" MaxLength="1000" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="TermsConditions" Type="varchar" MaxLength="1000" />
+    <Property Name="MinimumDays" Type="int" />
+    <Property Name="SecurityAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Rent" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="RentCriteria" Type="int" />
+    <Property Name="ImageLink1" Type="varchar" MaxLength="100" />
+    <Property Name="ImageLink2" Type="varchar" MaxLength="100" />
+    <Property Name="ImageLink3" Type="varchar" MaxLength="100" />
+    <Property Name="Shipable" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ForRent" Type="bit" />
+    <Property Name="ForSale" Type="bit" />
+    <Property Name="SaleAmount" Type="decimal" Precision="15" Scale="2" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageType" Type="varchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="MethodName" Type="varchar" MaxLength="70" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="255" />
+    <Property Name="EventTimeStamp" Type="datetime" />
+    <Property Name="IpAddress" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="OtpHolders">
+    <Key>
+      <PropertyRef Name="OtpId" />
+    </Key>
+    <Property Name="OtpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OtpReference" Type="varchar" MaxLength="70" />
+    <Property Name="Otp" Type="varchar" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="PlaceAddresses">
+    <Key>
+      <PropertyRef Name="PlaceAddressID" />
+    </Key>
+    <Property Name="PlaceAddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="Addressline1" Type="varchar" MaxLength="300" />
+    <Property Name="Addressline2" Type="varchar" MaxLength="200" />
+    <Property Name="LandMark" Type="varchar" MaxLength="200" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="StateID" Type="int" />
+    <Property Name="Country" Type="int" />
+    <Property Name="LongLatDetails" Type="varchar" MaxLength="50" />
+    <Property Name="PrimaryEmailAddress" Type="varchar" MaxLength="255" />
+    <Property Name="WebsiteLink" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PlaceContactDetails">
+    <Key>
+      <PropertyRef Name="PlaceContactID" />
+    </Key>
+    <Property Name="PlaceContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="PrimaryPOCName" Type="varchar" MaxLength="100" />
+    <Property Name="PrimaryPOCNumber" Type="varchar" MaxLength="20" />
+    <Property Name="SecondaryPOCName" Type="varchar" MaxLength="100" />
+    <Property Name="SecondaryPOCNumber" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PlaceEvents">
+    <Key>
+      <PropertyRef Name="EventTypeID" />
+    </Key>
+    <Property Name="EventTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Event" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PlaceFoodMenus">
+    <Key>
+      <PropertyRef Name="FoodID" />
+    </Key>
+    <Property Name="FoodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="FoodType" Type="int" />
+    <Property Name="FoodMenu" Type="varchar" MaxLength="500" />
+    <Property Name="PlateCostMin" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PlateCostMax" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="PlaceImages">
+    <Key>
+      <PropertyRef Name="ImageLinkID" />
+    </Key>
+    <Property Name="ImageLinkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="ImageLink" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PlaceOwnerDetails">
+    <Key>
+      <PropertyRef Name="PlaceOwnerID" />
+    </Key>
+    <Property Name="PlaceOwnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="Ownername" Type="varchar" MaxLength="150" />
+    <Property Name="OwnerContact" Type="varchar" MaxLength="20" />
+    <Property Name="OwnerAddress" Type="varchar" MaxLength="300" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="StateID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="PlacePriceDetails">
+    <Key>
+      <PropertyRef Name="PlacePriceID" />
+    </Key>
+    <Property Name="PlacePriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="AmountType" Type="varchar" MaxLength="60" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="PlaceID" />
+    </Key>
+    <Property Name="PlaceID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="SeatingCapacity" Type="varchar" MaxLength="30" />
+    <Property Name="DiningCapacity" Type="varchar" MaxLength="30" />
+    <Property Name="Area" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="AvailableFrom" Type="datetime" />
+    <Property Name="AvailableTill" Type="datetime" />
+    <Property Name="PlaceType" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PlacesProps">
+    <Key>
+      <PropertyRef Name="PlacePropID" />
+    </Key>
+    <Property Name="PlacePropID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceID" Type="uniqueidentifier" />
+    <Property Name="Rooms" Type="int" />
+    <Property Name="AirConditioned" Type="bit" />
+    <Property Name="EventOptions" Type="varchar" MaxLength="150" />
+    <Property Name="IsShaded" Type="bit" />
+  </EntityType>
+  <EntityType Name="PlaceTypes">
+    <Key>
+      <PropertyRef Name="PlaceTypeID" />
+    </Key>
+    <Property Name="PlaceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceTypeName" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="RentBasis">
+    <Key>
+      <PropertyRef Name="RentBasisId" />
+    </Key>
+    <Property Name="RentBasisId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="SliderID" />
+    </Key>
+    <Property Name="SliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OfferHeading" Type="varchar" MaxLength="100" />
+    <Property Name="ImageLink" Type="varchar" MaxLength="250" />
+    <Property Name="Offer" Type="varchar" MaxLength="300" />
+    <Property Name="SlideOrder" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="UserDetailsId" />
+    </Key>
+    <Property Name="UserDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Profession" Type="varchar" MaxLength="50" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="Pincode" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="UserNames">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Usern" Type="varchar" MaxLength="15" />
+    <Property Name="Role" Type="varchar" MaxLength="15" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_PlaceAddresses_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlaceAddresses" Type="Self.PlaceAddresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlaceAddresses">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaceContactDetails_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlaceContactDetails" Type="Self.PlaceContactDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlaceContactDetails">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaceFoodMenus_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlaceFoodMenus" Type="Self.PlaceFoodMenus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlaceFoodMenus">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaceImages_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlaceImages" Type="Self.PlaceImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlaceImages">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaceOwnerDetails_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlaceOwnerDetails" Type="Self.PlaceOwnerDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlaceOwnerDetails">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlacePriceDetails_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlacePriceDetails" Type="Self.PlacePriceDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlacePriceDetails">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlacesProps_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="PlacesProps" Type="Self.PlacesProps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="PlacesProps">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TariffBazaarModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodTypes" EntityType="Self.FoodTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtpHolders" EntityType="Self.OtpHolders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceAddresses" EntityType="Self.PlaceAddresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceContactDetails" EntityType="Self.PlaceContactDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceEvents" EntityType="Self.PlaceEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceFoodMenus" EntityType="Self.PlaceFoodMenus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceImages" EntityType="Self.PlaceImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceOwnerDetails" EntityType="Self.PlaceOwnerDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlacePriceDetails" EntityType="Self.PlacePriceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlacesProps" EntityType="Self.PlacesProps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceTypes" EntityType="Self.PlaceTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RentBasis" EntityType="Self.RentBasis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserNames" EntityType="Self.UserNames" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PlaceAddresses_Places" Association="Self.FK_PlaceAddresses_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlaceAddresses" EntitySet="PlaceAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaceContactDetails_Places" Association="Self.FK_PlaceContactDetails_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlaceContactDetails" EntitySet="PlaceContactDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaceFoodMenus_Places" Association="Self.FK_PlaceFoodMenus_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlaceFoodMenus" EntitySet="PlaceFoodMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaceImages_Places" Association="Self.FK_PlaceImages_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlaceImages" EntitySet="PlaceImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaceOwnerDetails_Places" Association="Self.FK_PlaceOwnerDetails_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlaceOwnerDetails" EntitySet="PlaceOwnerDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlacePriceDetails_Places" Association="Self.FK_PlacePriceDetails_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlacePriceDetails" EntitySet="PlacePriceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlacesProps_Places" Association="Self.FK_PlacesProps_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="PlacesProps" EntitySet="PlacesProps" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

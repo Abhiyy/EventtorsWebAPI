@@ -1,0 +1,10 @@
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\AppBanwao.Tariffbazaar.DataAccess.dll.config
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\AppBanwao.Tariffbazaar.DataAccess.dll
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\AppBanwao.Tariffbazaar.DataAccess.pdb
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\EntityFramework.dll
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\EntityFramework.xml
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\obj\Release\AppBanwao.Tariffbazaar.DataAccess.csprojResolveAssemblyReference.cache
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\obj\Release\AppBanwao.Tariffbazaar.DataAccess.dll
+D:\Data07-07-14\Code RnD\test\AppBanwao.Tariffbazaar.Eventtors.WebAPI\AppBanwao.Tariffbazaar.DataAccess\obj\Release\AppBanwao.Tariffbazaar.DataAccess.pdb
