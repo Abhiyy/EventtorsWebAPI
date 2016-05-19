@@ -17,16 +17,20 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
             this.PlaceAddresses = new List<PlaceAddressModel>();
             foreach (var placeaddr in placeaddress)
             {
-                this.PlaceAddressID = placeaddr.PlaceAddressID;
-                this.PlaceID = placeaddr.PlaceID;
-                this.Addressline1 = placeaddr.Addressline1;
-                this.Addressline2 = placeaddr.Addressline2;
-                this.LandMark = placeaddr.LandMark;
-                this.CityID = placeaddr.CityID;
-                this.StateID = placeaddr.StateID;
-                this.Country = placeaddr.Country;
-                this.LongLatDetails = placeaddr.LongLatDetails;
-                PlaceAddresses.Add(this);
+                var objPlaceaddr = new PlaceAddressModel()
+                {
+                    PlaceAddressID = placeaddr.PlaceAddressID,
+                    PlaceID = placeaddr.PlaceID,
+                    Addressline1 = placeaddr.Addressline1,
+                    Addressline2 = placeaddr.Addressline2,
+                    LandMark = placeaddr.LandMark,
+                    CityID = placeaddr.CityID,
+                    StateID = placeaddr.StateID,
+                    Country = placeaddr.Country,
+                    LongLatDetails = placeaddr.LongLatDetails
+                };
+                PlaceAddresses.Add(objPlaceaddr);
+                objPlaceaddr = null;
             }
         }
         [DataMember]

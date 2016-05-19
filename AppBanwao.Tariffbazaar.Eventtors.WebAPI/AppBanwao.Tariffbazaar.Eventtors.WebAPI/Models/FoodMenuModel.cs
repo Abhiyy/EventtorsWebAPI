@@ -19,13 +19,16 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
 
             foreach (var foodmenu in foodmenus)
             {
-                this.FoodID = foodmenu.FoodID;
-                this.FoodMenu = foodmenu.FoodMenu;
-                this.FoodType = foodmenu.FoodType;
-                this.PlaceID = foodmenu.PlaceID;
-                this.PlateCostMax = foodmenu.PlateCostMax;
-                this.PlateCostMin = foodmenu.PlateCostMin;
-                FoodMenus.Add(this);
+                var objFood = new FoodMenuModel(){
+                FoodID = foodmenu.FoodID,
+                FoodMenu = foodmenu.FoodMenu,
+                FoodType = foodmenu.FoodType,
+                PlaceID = foodmenu.PlaceID,
+                PlateCostMax = foodmenu.PlateCostMax,
+                PlateCostMin = foodmenu.PlateCostMin
+            };
+                FoodMenus.Add(objFood);
+                objFood = null;
             }
         
         }

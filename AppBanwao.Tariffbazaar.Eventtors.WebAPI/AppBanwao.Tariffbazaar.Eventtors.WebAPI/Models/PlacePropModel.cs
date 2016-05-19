@@ -18,14 +18,17 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
             PlaceProperties = new List<PlacePropModel>();
             foreach (var p in prop)
             {
-                this.AirConditioned = p.AirConditioned;
-                this.EventOptions = p.EventOptions;
-                this.IsShaded = p.IsShaded;
-                this.PlaceID = p.PlaceID;
-                this.PlacePropID = p.PlacePropID;
-                this.Rooms = p.Rooms;
-
-                PlaceProperties.Add(this);
+                var pr = new PlacePropModel()
+                {
+                    AirConditioned = p.AirConditioned,
+                    EventOptions = p.EventOptions,
+                    IsShaded = p.IsShaded,
+                    PlaceID = p.PlaceID,
+                    PlacePropID = p.PlacePropID,
+                    Rooms = p.Rooms
+                };
+                PlaceProperties.Add(pr);
+                pr = null;
             }
         }
         [DataMember]

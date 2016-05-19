@@ -18,15 +18,18 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
             OwnerDetails = new List<PlaceOwnerModel>();
 
             foreach (var o in owner) {
-                this.CityID = o.CityID;
-                this.CountryID = o.CountryID;
-                this.OwnerAddress = o.OwnerAddress;
-                this.OwnerContact = o.OwnerContact;
-                this.Ownername = o.Ownername;
-                this.PlaceID = o.PlaceID;
-                this.PlaceOwnerID = o.PlaceOwnerID;
-                this.StateID = o.StateID;
-                OwnerDetails.Add(this);
+               var own = new PlaceOwnerModel(){
+                CityID = o.CityID,
+                CountryID = o.CountryID,
+                OwnerAddress = o.OwnerAddress,
+                OwnerContact = o.OwnerContact,
+                Ownername = o.Ownername,
+                PlaceID = o.PlaceID,
+                PlaceOwnerID = o.PlaceOwnerID,
+                StateID = o.StateID
+            };
+                OwnerDetails.Add(own);
+                own = null;
             }
         }
         [DataMember]

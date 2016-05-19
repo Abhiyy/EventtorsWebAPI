@@ -19,12 +19,15 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
 
             foreach (var p in prices)
             {
-                this.Amount = p.Amount;
-                this.AmountType = p.AmountType;
-                this.PlaceID = p.PlaceID;
-                this.PlacePriceID = p.PlacePriceID;
-
-                PriceDetails.Add(this);
+                var pri = new PricingDetailsModel()
+                {
+                    Amount = p.Amount,
+                    AmountType = p.AmountType,
+                    PlaceID = p.PlaceID,
+                    PlacePriceID = p.PlacePriceID
+                };
+                PriceDetails.Add(pri);
+                pri=null;
             }
         }
         [DataMember]

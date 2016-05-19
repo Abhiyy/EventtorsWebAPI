@@ -18,12 +18,15 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
             PlaceImages = new List<ImagesModel>();
             foreach (var img in images)
             {
-                this.ImageLinkID = img.ImageLinkID;
-                this.PlaceID = img.PlaceID;
-                this.ImageLink = img.ImageLink;
+                var objImage = new ImagesModel(){
+                ImageLinkID = img.ImageLinkID,
+                PlaceID = img.PlaceID,
+                ImageLink = img.ImageLink,
+            };
 
-
-                PlaceImages.Add(this);
+                PlaceImages.Add(objImage);
+                objImage = null;
+            
             }
         }
 

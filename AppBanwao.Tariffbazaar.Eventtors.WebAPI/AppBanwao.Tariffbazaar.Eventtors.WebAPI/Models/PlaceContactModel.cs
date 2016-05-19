@@ -19,14 +19,17 @@ namespace AppBanwao.Tariffbazaar.Eventtors.WebAPI.Models
             ContactDetails = new List<PlaceContactModel>();
             foreach (var con in contacts)
             {
-                this.PlaceContactID = con.PlaceContactID;
-                this.PlaceID = con.PlaceID;
-                this.PrimaryPOCName = con.PrimaryPOCName;
-                this.PrimaryPOCNumber = con.PrimaryPOCNumber;
-                this.SecondaryPOCName = con.SecondaryPOCName;
-                this.SecondaryPOCNumber = con.SecondaryPOCNumber;
-
-                ContactDetails.Add(this);
+                var contact = new PlaceContactModel()
+                {
+                  PlaceContactID = con.PlaceContactID,
+                  PlaceID = con.PlaceID,
+                  PrimaryPOCName = con.PrimaryPOCName,
+                  PrimaryPOCNumber = con.PrimaryPOCNumber,
+                  SecondaryPOCName = con.SecondaryPOCName,
+                  SecondaryPOCNumber = con.SecondaryPOCNumber
+                };
+                ContactDetails.Add(contact);
+                contact = null;
             }
 
         }
